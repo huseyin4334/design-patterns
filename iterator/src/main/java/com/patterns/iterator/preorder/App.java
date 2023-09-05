@@ -11,11 +11,11 @@ public class App {
 
         // Normal Node Iterator
         /*
-            1
+            a
            / \
-          2   3
+          b   c
              / \
-            4   5
+            d   e
          */
         Node<String> root = new Node<>(
                 "a",
