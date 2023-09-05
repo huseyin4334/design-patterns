@@ -33,4 +33,8 @@ public class App {
             System.out.print(it.next().value + ",");
         }
     }
+
+    /*
+        https://en.wikipedia.org/wiki/Tree_traversal#Pre-order
+     */
 }
