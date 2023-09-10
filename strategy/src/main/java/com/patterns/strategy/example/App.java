@@ -29,9 +29,7 @@ class OrdinaryDiscriminantStrategy implements DiscriminantStrategy
     public double calculateDiscriminant(double a, double b, double c)
     {
         // todo
-        double dis = Math.pow(b,2) - (4*a*c);
-
-        return dis < 0 ? dis : (-1 * dis);
+        return Math.pow(b,2) - (4*a*c);
     }
 }
 
@@ -59,22 +57,22 @@ class QuadraticEquationSolver
     public Pair<Complex, Complex> solve(double a, double b, double c)
     {
         // todo
-        double dis = strategy.calculateDiscriminant(a, b, c);
-        Complex x1 = new Complex(0, 0);
-        Complex x2 = new Complex(0, 0);
+        double dis = strategy.calculateDiscriminant(a,b,c);
+        Complex root1;
+        Complex root2;
 
         if (dis < 0)
         {
-            x1 = new Complex((-1 * b) / (2 * a), Math.sqrt(-1 * dis) / (2 * a));
-            x2 = new Complex((-1 * b) / (2 * a), -1 * Math.sqrt(-1 * dis) / (2 * a));
+            root1 = new Complex(-b/(2*a), Math.sqrt(-dis)/(2*a));
+            root2 = new Complex(-b/(2*a), -Math.sqrt(-dis)/(2*a));
         }
         else
         {
-            x1 = new Complex((-1 * b) + Math.sqrt(dis) / (2 * a), 0);
-            x2 = new Complex((-1 * b) - Math.sqrt(dis) / (2 * a), 0);
+            root1 = new Complex((-b + Math.sqrt(dis))/(2*a), 0);
+            root2 = new Complex((-b - Math.sqrt(dis))/(2*a), 0);
         }
 
-        return new Pair<>(x1, x2);
+        return new Pair<>(root1, root2);
     }
 }
 
